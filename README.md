@@ -2,8 +2,8 @@
  localStorage期限オプションを作ってみます。
 
  以下のサイトに参考しました。  
- [ https://iwb.jp/javascript-localstorage-expire-object-value/]( https://iwb.jp/javascript-localstorage-expire-object-value/)
- 
+<a href="https://iwb.jp/javascript-localstorage-expire-object-value/" target="_blank">https://iwb.jp/javascript-localstorage-expire-object-value/</a>  
+
  ### 使い方：
  localStorage.jsをページに埋め込みます。  
  es6の場合、LocalStorage.mod.jsをimportしてください。
@@ -19,31 +19,31 @@ localStorageClass.setStorage('localStorageNormalTest2', 'テキストを保存�
 ```  
 #### 期限設定 
 
-##### -- 2019年9月30日 23時59分59秒まで
+##### - 2019年9月30日 23時59分59秒まで
 ```  
 localStorageClass.setStorage('localStorageExpireTest1', '2019年9月30日 23時59分59秒まで', new Date('2019/9/30 23:59:59'));  
 ```  
-##### -- 30分制限
+##### - 30分制限
 ```  
 localStorageClass.setStorage('localStorageExpireTest2', '30分制限', new Date().getTime() + (30 * 60 * 1000));  
 ```  
-##### -- 10時間制限
+##### - 10時間制限
 ```  
 localStorageClass.setStorage('localStorageExpireTest3', '10時間制限', new Date().getTime() + (10 * 60 * 60 * 1000));  
 ```  
-##### -- 7日制限
+##### - 7日制限
 ```  
 localStorageClass.setStorage('localStorageExpireTest4', '7日制限', new Date().getTime() + (7 * 24 * 60 * 60 * 1000));  
 ```  
-##### -- データの取得
+##### - データの取得
 ```  
 localStorageClass.getStorage('localStorageNormalTest2');  
 ```  
-##### -- データの削除
+##### - データの削除
 ```  
 localStorageClass.removeStorage('localStorageNormalTest2');  
 ```  
-##### -- Localstorage（ローカルストレージ）を初期化する
+##### - Localstorage（ローカルストレージ）を初期化する
 ```  
 localStorageClass.clearStorage();  
 ```
