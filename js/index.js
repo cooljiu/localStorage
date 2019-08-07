@@ -14,7 +14,7 @@ localStorageClass.setStorage('localStorageExpireTest1', '2019年9月30日まで'
 //10秒制限
 date = new Date();
 date.setTime( date.getTime() + (10 * 1000));
-//localStorageClass.setStorage('localStorageExpireTest2', '10秒制限', date);
+localStorageClass.setStorage('localStorageExpireTest2', '10秒制限', date);
 //30分制限
 date = new Date();
 date.setTime( date.getTime() + (30 * 60 * 1000));
