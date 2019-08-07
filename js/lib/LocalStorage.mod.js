@@ -16,6 +16,11 @@ export default class LocalStorage {
   setStorage(key, value, expire) {
     let data;
     if (expire !== undefined) {
+      if (typeof expire === 'number') {
+        var days = expire, t = expire = new Date();
+        t.setTime(+t + days * 864e+5);
+        expire = t;
+      }
       data = {
         expire: expire,
         value: value
