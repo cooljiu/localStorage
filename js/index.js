@@ -2,9 +2,16 @@
 // import LocalStorage from './lib/LocalStorage.mod.js';
 
 const localStorageClass = new LocalStorage();
-//通常のデーター保存
+//通常のデータ保存
 localStorageClass.setStorage('localStorageNormalTest1', 123456789);
 localStorageClass.setStorage('localStorageNormalTest2', 'テキストを保存します。');
+
+//jsonデータ保存
+let jsonData = new Object();
+jsonData.title = "タイトル";
+jsonData.url = "hoge.com";
+jsonData.description = "概要テキスト";
+localStorageClass.setStorage('localStorageJson', jsonData);
 
 //期限設定 
 let date = new Date();
@@ -28,7 +35,7 @@ date = new Date();
 localStorageClass.setStorage('localStorageExpireTest5', '7日制限', 7);
 
 //データの取得
-localStorageClass.getStorage('localStorageExpireTest2');
+localStorageClass.getStorage('localStorageJson');
 
 //データの削除
 //localStorageClass.removeStorage('localStorageNormalTest2');
