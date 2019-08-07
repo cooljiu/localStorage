@@ -9,7 +9,7 @@
  es6の場合、LocalStorage.mod.jsをimportしてください。
  
   #### localStorageクラスをセットします。  
- ```var localStorageClass = new LocalStorage();```
+ ```const localStorageClass = new LocalStorage();```
 
 #### 通常のデーター保存 
 
@@ -18,22 +18,35 @@ localStorageClass.setStorage('localStorageNormalTest1', 123456789);
 localStorageClass.setStorage('localStorageNormalTest2', 'テキストを保存します。');  
 ```  
 #### 期限設定 
-
-##### - 2019年9月30日 23時59分59秒まで
+``` 
+let date = new Date();
+``` 
+##### - 2019年9月30日まで
 ```  
-localStorageClass.setStorage('localStorageExpireTest1', '2019年9月30日 23時59分59秒まで', new Date('2019/9/30 23:59:59'));  
+date.setTime(new Date('2019/9/30'));
+localStorageClass.setStorage('localStorageExpireTest1', '2019年9月30日まで', date);  
+```  
+##### - 10秒制限
+```  
+date = new Date();
+date.setTime( date.getTime() + (10 * 1000));
+localStorageClass.setStorage('localStorageExpireTest2', '10秒制限', date);  
 ```  
 ##### - 30分制限
 ```  
-localStorageClass.setStorage('localStorageExpireTest2', '30分制限', new Date().getTime() + (30 * 60 * 1000));  
+date = new Date();
+date.setTime( date.getTime() + (30 * 60 * 1000));
+localStorageClass.setStorage('localStorageExpireTest2', '30分制限', date);  
 ```  
 ##### - 10時間制限
 ```  
-localStorageClass.setStorage('localStorageExpireTest3', '10時間制限', new Date().getTime() + (10 * 60 * 60 * 1000));  
+date = new Date();
+date.setTime( date.getTime() + (10 * 60 * 60 * 1000));
+localStorageClass.setStorage('localStorageExpireTest3', '10時間制限', date);  
 ```  
 ##### - 7日制限
 ```  
-localStorageClass.setStorage('localStorageExpireTest4', '7日制限', new Date().getTime() + (7 * 24 * 60 * 60 * 1000));  
+localStorageClass.setStorage('localStorageExpireTest4', '7日制限', 7);  
 ```  
 ##### - データの取得
 ```  
