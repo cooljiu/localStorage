@@ -1,7 +1,7 @@
-# localStorage拡張
- localStorage期限オプションを作ってみます。
+# localStorage拡張  
+ localStorageを使いやすいように、クラス化しました。
 
- 以下のサイトに参考しました。  
+ 期限オプション部分は以下のサイトに参考しました。  
 <a href="https://iwb.jp/javascript-localstorage-expire-object-value/" target="_blank">https://iwb.jp/javascript-localstorage-expire-object-value/</a>  
 
  ### 使い方：
@@ -71,7 +71,6 @@ localStorageClass.removeStorage('localStorageNormalTest2');
 localStorageClass.clearStorage();  
 ```
 <br /><br /><br />
-phpの場合、サーバーの時刻を取得できるので、new Date()を取得した時刻に入れ替えていいと思います。
 
 
 
